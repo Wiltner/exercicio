@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+
+const Equipe = (props) => {
+  return(
+    <div className="equipe">
+       <Sobre nome={props.nome} cargo={props.cargo} atribuicao={props.atribuicao}/>
+      <hr/>
+    </div>
+  )
+}
+
+const Sobre = (props) => {
+  return(
+    <>
+      <h2>Olá, sou {props.nome}</h2>
+      <h3>Cargo: {props.cargo}</h3>
+      <h3>Atribuição: Sou responsável por {props.atribuicao}</h3>
+    </>
+  );
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+    <h1>Conheça nossa equipe: </h1>
+    <Equipe nome="Matheus" cargo="Programador" atribuicao="programação do banco de dados"/>
+    <Equipe nome="Yan" cargo="Programador" atribuicao="programação do Front-end"/>
+    <Equipe nome="Vitor" cargo="Programador" atribuicao="programação do back-end"/>
+</div>
   );
 }
 
